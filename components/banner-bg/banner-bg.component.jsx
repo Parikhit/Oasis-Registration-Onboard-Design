@@ -8,9 +8,9 @@ const BannerBackground = () => {
             <Image
                 priority
                 src={BgImage}
-                alt='Background Image'
-                width={`${45}%`}
+                width={`${50}%`}
                 height={`${100}vh`}
+                alt='Background Image'
             />
         </>
     );
