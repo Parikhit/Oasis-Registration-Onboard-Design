@@ -9,6 +9,7 @@ const BackButton = () => {
     const router = useRouter();
     return (
         <button
+            type='button'
             className='flex items-center justify-center text-base text-slate-400 font-medium'
             onClick={() => router.back()}
         >

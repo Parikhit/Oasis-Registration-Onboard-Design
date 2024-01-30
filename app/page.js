@@ -10,7 +10,7 @@ export default function Home() {
                 <BannerBackground />
             </div>
             <p className='absolute top-20 right-20'>
-                Already have an account?{' '}
+                Already have an account?
                 <Link href='/' className='text-blue-800'>
                     Sign In
                 </Link>

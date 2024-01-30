@@ -1,7 +1,7 @@
-import Button from '../button/button.component';
-import GoogleBtn from '../google-button/google-button.component';
+import Button from '@/components/button/button.component';
+import GoogleBtn from '@/components/google-button/google-button.component';
 
-const RegisterForm = () => {
+const RegisterForm = ({ fullName, email, password, updateFields }) => {
     return (
         <>
             <header className='w-3/5 text-3xl my-5 font-bold'>Register Individual Account!</header>
@@ -19,6 +19,8 @@ const RegisterForm = () => {
                             name='name'
                             required
                             placeholder='Invictus Innocent'
+                            value={fullName}
+                            onChange={(e) => updateFields({ fullName: e.target.value })}
                             className='border-2 rounded-md border-blue-400 shadow p-4 mt-2'
                         />
                     </p>
@@ -32,6 +34,8 @@ const RegisterForm = () => {
                             name='email'
                             required
                             placeholder='Enter email address'
+                            value={email}
+                            onChange={(e) => updateFields({ email: e.target.value })}
                             className='border-2 rounded-md border-blue-400 shadow p-4 mt-2'
                         />
                     </p>
@@ -46,12 +50,19 @@ const RegisterForm = () => {
                             minlength='8'
                             required
                             placeholder='Enter password'
+                            value={password}
+                            onChange={(e) => updateFields({ password: e.target.value })}
                             className='border-2 rounded-md border-blue-400 shadow p-4 mt-2'
                         />
                     </p>
 
                     <p className='flex items-center'>
-                        <input type='checkbox' name='terms' className='border-2 accent-blue-600' />
+                        <input
+                            type='checkbox'
+                            required
+                            name='terms'
+                            className='border-2 accent-blue-600'
+                        />
                         <label htmlFor='terms' className='mx-5 text-gray-500 font-medium'>
                             I agree to terms & conditions
                         </label>
