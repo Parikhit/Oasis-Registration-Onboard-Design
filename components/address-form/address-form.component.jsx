@@ -1,6 +1,10 @@
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
+import { CountryDropdown } from 'react-country-region-selector';
+
 import Button from '@/components/button/button.component';
 
-const AddressForm = () => {
+const AddressForm = ({ phone, address, country, updateFields }) => {
     return (
         <>
             <header className='w-3/5 text-3xl my-5 font-bold'>Complete Your Profile!</header>
@@ -9,22 +13,22 @@ const AddressForm = () => {
             </p>
             <form className='w-3/5 mt-8' action=''>
                 <div>
-                    <p className='flex flex-col my-4'>
-                        <label htmlFor='number' className='text-gray-500 font-medium'>
+                    <div className='flex flex-col my-4'>
+                        <label htmlFor='phone' className='text-gray-500 font-medium'>
                             Phone number
                         </label>
-                        <input
-                            type='number'
+                        <PhoneInput
                             name='phone'
+                            defaultCountry='IN'
                             required
-                            placeholder='090912345567'
+                            placeholder='Enter phone number'
                             value={phone}
-                            onChange={(e) => updateFields({ fullName: e.target.value })}
+                            onChange={(number) => updateFields({ phone: number })}
                             className='border-2 rounded-md border-blue-400 shadow p-4 mt-2'
                         />
-                    </p>
+                    </div>
 
-                    <p className='flex flex-col my-4'>
+                    <div className='flex flex-col my-4'>
                         <label htmlFor='address' className='text-gray-500 font-medium'>
                             Your address
                         </label>
@@ -34,25 +38,25 @@ const AddressForm = () => {
                             required
                             placeholder='Please enter address'
                             value={address}
-                            onChange={(e) => updateFields({ email: e.target.value })}
+                            onChange={(e) => updateFields({ address: e.target.value })}
                             className='border-2 rounded-md border-blue-400 shadow p-4 mt-2'
                         />
-                    </p>
+                    </div>
 
-                    <p className='flex flex-col my-4'>
+                    <div className='flex flex-col my-4'>
                         <label htmlFor='country' className='text-gray-500 font-medium'>
                             Country of residence
                         </label>
-                        <input
+                        <CountryDropdown
                             type='country'
                             name='country'
                             required
                             placeholder='Please select'
                             value={country}
-                            onChange={(e) => updateFields({ password: e.target.value })}
+                            onChange={(val) => updateFields({ country: val })}
                             className='border-2 rounded-md border-blue-400 shadow p-4 mt-2'
                         />
-                    </p>
+                    </div>
 
                     <p>
                         <Button name='Save & Continue' />

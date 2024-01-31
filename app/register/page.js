@@ -45,7 +45,7 @@ const FormPages = () => {
                     <FormHeader currentPage={currentPage(currentStepIndex)} steps={steps} />
                 </header>
                 <section className='mx-auto flex flex-col items-center justify-center'>
-                    {step}
+                    {steps[1]}
                 </section>
             </div>
         </main>
