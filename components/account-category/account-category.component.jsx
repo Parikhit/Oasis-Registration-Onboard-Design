@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import AccountLogo from '../account-logo/account-logo.component';
-
 import IndividualLogo from '@/public/logo-Image/IndividualUser.svg';
 import BusinessLogo from '@/public/logo-Image/BusinessUser.svg';
 

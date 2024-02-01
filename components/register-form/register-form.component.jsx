@@ -1,14 +1,21 @@
+'use client';
+
+import { useContext } from 'react';
+import { FormContext } from '@/context/form.context';
+
 import Button from '@/components/button/button.component';
 import GoogleBtn from '@/components/google-button/google-button.component';
 
 const RegisterForm = ({ fullName, email, password, updateFields }) => {
+    const { nextStep, onSubmit } = useContext(FormContext);
+
     return (
         <>
             <header className='w-3/5 text-3xl my-5 font-bold'>Register Individual Account!</header>
             <p className='w-3/5 text-lg text-slate-400 font-normal'>
                 For the purpose of industry regulation, your <br /> details are required.
             </p>
-            <form className='w-3/5 mt-8' action=''>
+            <form className='w-3/5 mt-8' onSubmit={onSubmit}>
                 <div>
                     <p className='flex flex-col my-4'>
                         <label htmlFor='name' className='text-gray-500 font-medium'>
@@ -69,7 +76,7 @@ const RegisterForm = ({ fullName, email, password, updateFields }) => {
                     </p>
 
                     <p>
-                        <Button name='Register Account' />
+                        <Button name='Register Account' onClick={nextStep} />
                     </p>
 
                     <p className='mt-5 w-full text-xs text-center text-gray-500'>Or</p>
