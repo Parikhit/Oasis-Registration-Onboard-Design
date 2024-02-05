@@ -6,8 +6,8 @@ const FormHeader = ({ currentPage, steps }) => {
             <div>
                 <BackButton />
             </div>
-            <div>
-                <p className='mx-3 text-base text-slate-400 font-normal'>
+            <div className='mr-8'>
+                <p className='text-base text-slate-400 font-normal'>
                     STEP {'0' + currentPage}/{'0' + steps.length}
                 </p>
                 <p className='text-base text-blue-800'>Personal Info.</p>

@@ -16,7 +16,7 @@ const AccountCategory = () => {
             </p>
             <Link
                 href='/register'
-                className='flex justify-around items-center bg-gray-100 my-6 border-2 rounded-md border-blue-400 shadow'
+                className='relative flex gap-14 justify-around items-center bg-gray-100 my-6 border-2 rounded-md border-blue-400 shadow'
             >
                 <AccountLogo image={IndividualLogo} type='user' />
                 <div>
@@ -26,13 +26,19 @@ const AccountCategory = () => {
                         activities.
                     </p>
                 </div>
-                <div className='mx-10'>
-                    <Image priority src={ArrowRight} alt='arrow-right' />
+                <div>
+                    <Image
+                        className='absolute top-10 right-5'
+                        priority
+                        src={ArrowRight}
+                        alt='arrow-right'
+                    />
                 </div>
             </Link>
+
             <Link
                 href='/'
-                className='flex items-center px-1 bg-gray-100 my-6 border-2 rounded-md border-blue-400 shadow'
+                className='flex justify-around  items-center px-1 bg-gray-100 my-6 border-2 rounded-md border-blue-400 shadow'
             >
                 <AccountLogo image={BusinessLogo} type='business' />
                 <div className='px-1'>

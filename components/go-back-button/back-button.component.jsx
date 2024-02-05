@@ -1,7 +1,7 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 import BackBtn from '@/public/back-arrow/arrow_back.svg';
 
@@ -10,7 +10,7 @@ const BackButton = () => {
     return (
         <button
             type='button'
-            className='flex items-center justify-center text-base text-slate-400 font-medium'
+            className='flex items-center justify-center text-base text-slate-400 font-medium mx-4'
             onClick={() => router.back()}
         >
             <Image src={BackBtn} alt='go-back' />

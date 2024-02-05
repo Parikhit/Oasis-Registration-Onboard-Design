@@ -26,17 +26,16 @@ export const FormProvider = ({ children }) => {
 
     const router = useRouter();
 
-    const onSubmit = () => {
+    const onFinalSubmit = (e) => {
         e.preventDefault();
-        nextStep();
+
+        router.push('/');
     };
 
-    const onFinalSubmit = () => {
+    function onSubmit(e) {
         e.preventDefault();
-        setTimeout(() => {
-            router.push('/');
-        }, 4000);
-    };
+        nextStep();
+    }
 
     const updateFields = (fields) =>
         setData((prev) => {

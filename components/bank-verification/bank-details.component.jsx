@@ -4,14 +4,13 @@ import Image from 'next/image';
 
 import { useState, useContext } from 'react';
 import { FormContext } from '@/context/form.context';
-import Button from '@/components/button/button.component';
 
+import Button from '@/components/button/button.component';
 import LockImg from '@/public/lock_24px.svg';
 import Check from '@/public/circle-check.svg';
 
 const BankDetails = ({ bvn, updateFields }) => {
     const [isBVNValid, setIsBVNValid] = useState(false);
-
     const { onFinalSubmit } = useContext(FormContext);
 
     const handleBVNChange = (e) => {
@@ -24,11 +23,11 @@ const BankDetails = ({ bvn, updateFields }) => {
 
     return (
         <>
-            <header className='w-3/5 text-3xl my-5 font-bold'>Complete Your Profile!</header>
-            <p className='w-3/5 text-lg text-slate-400 font-normal'>
+            <header className='w-full text-3xl my-5 font-bold'>Complete Your Profile!</header>
+            <p className='w-full text-lg text-slate-400 font-normal'>
                 For the purpose of industry regulation, your <br /> details are required.
             </p>
-            <form className='w-3/5 mt-8' onSubmit={onFinalSubmit}>
+            <form className='w-full mt-8' onSubmit={onFinalSubmit} action='/'>
                 <div>
                     <div className='relative flex flex-col my-4'>
                         <label htmlFor='address' className='text-gray-500 font-medium'>
@@ -50,10 +49,14 @@ const BankDetails = ({ bvn, updateFields }) => {
                         )}
                     </div>
                     <p>
-                        <Button name='Save & Continue' onClick={onFinalSubmit} />
+                        <Button name='Save & Continue' />
                     </p>
                     <div className='flex justify-center mt-5'>
-                        <Image src={LockImg} width='auto' height='auto' alt='lock-img' />
+                        <Image
+                            src={LockImg}
+                            style={{ width: 'auto', height: 'auto' }}
+                            alt='lock-img'
+                        />
                         <p className='mx-1 text-xs  text-gray-400 '>Your Info is safely secured</p>
                     </div>
                 </div>

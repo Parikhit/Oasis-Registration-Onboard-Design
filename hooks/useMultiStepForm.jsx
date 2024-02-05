@@ -13,18 +13,9 @@ const useMultiStepForm = (steps) => {
         });
     };
 
-    const previousStep = () => {
-        setCurrentStepIndex((current) => {
-            if (current <= 0) return current;
-
-            return current - 1;
-        });
-    };
-
     return {
         currentStepIndex,
         step: steps[currentStepIndex],
-        previousStep,
         nextStep,
         steps,
     };

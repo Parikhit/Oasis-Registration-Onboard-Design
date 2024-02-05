@@ -7,15 +7,17 @@ import Button from '@/components/button/button.component';
 import GoogleBtn from '@/components/google-button/google-button.component';
 
 const RegisterForm = ({ fullName, email, password, updateFields }) => {
-    const { nextStep, onSubmit } = useContext(FormContext);
+    const { onSubmit } = useContext(FormContext);
 
     return (
         <>
-            <header className='w-3/5 text-3xl my-5 font-bold'>Register Individual Account!</header>
-            <p className='w-3/5 text-lg text-slate-400 font-normal'>
+            <header className='w-3/4 2xl:text-3xl my-5 font-bold xl:mx-6 xl:text-3xl lg:text-2xl lg:w-2/5 lg:mx-6 md:text-2xl xl:mt-4'>
+                Register Individual Account!
+            </header>
+            <p className='2xl:w-3/5 2xl:text-lg text-slate-400 font-normal xl:w-2/5'>
                 For the purpose of industry regulation, your <br /> details are required.
             </p>
-            <form className='w-3/5 mt-8' onSubmit={onSubmit}>
+            <form className='w-full mt-6' onSubmit={onSubmit}>
                 <div>
                     <p className='flex flex-col my-4'>
                         <label htmlFor='name' className='text-gray-500 font-medium'>
@@ -54,8 +56,8 @@ const RegisterForm = ({ fullName, email, password, updateFields }) => {
                         <input
                             type='password'
                             name='password'
-                            minlength='8'
                             required
+                            minLength={8}
                             placeholder='Enter password'
                             value={password}
                             onChange={(e) => updateFields({ password: e.target.value })}
@@ -66,8 +68,8 @@ const RegisterForm = ({ fullName, email, password, updateFields }) => {
                     <p className='flex items-center'>
                         <input
                             type='checkbox'
-                            required
                             name='terms'
+                            required
                             className='border-2 accent-blue-600'
                         />
                         <label htmlFor='terms' className='mx-5 text-gray-500 font-medium'>
@@ -76,7 +78,7 @@ const RegisterForm = ({ fullName, email, password, updateFields }) => {
                     </p>
 
                     <p>
-                        <Button name='Register Account' onClick={nextStep} />
+                        <Button name='Register Account' />
                     </p>
 
                     <p className='mt-5 w-full text-xs text-center text-gray-500'>Or</p>

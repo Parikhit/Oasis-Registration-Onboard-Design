@@ -13,15 +13,15 @@ import Button from '@/components/button/button.component';
 import LockImg from '@/public/lock_24px.svg';
 
 const AddressForm = ({ phone, address, country, updateFields }) => {
-    const { nextStep, onSubmit } = useContext(FormContext);
+    const { onSubmit } = useContext(FormContext);
 
     return (
         <>
-            <header className='w-3/5 text-3xl my-5 font-bold'>Complete Your Profile!</header>
-            <p className='w-3/5 text-lg text-slate-400 font-normal'>
+            <header className='w-full text-3xl my-5 font-bold'>Complete Your Profile!</header>
+            <p className='w-full text-lg text-slate-400 font-normal'>
                 For the purpose of industry regulation, your <br /> details are required.
             </p>
-            <form className='w-3/5 mt-8' onSubmit={onSubmit}>
+            <form className='w-full mt-8' onSubmit={onSubmit}>
                 <div>
                     <div className='flex flex-col my-4'>
                         <label htmlFor='phone' className='text-gray-500 font-medium'>
@@ -69,11 +69,15 @@ const AddressForm = ({ phone, address, country, updateFields }) => {
                     </div>
 
                     <p>
-                        <Button name='Save & Continue' onClick={nextStep} />
+                        <Button name='Save & Continue' />
                     </p>
 
                     <div className='flex justify-center mt-5'>
-                        <Image src={LockImg} width='auto' height='auto' alt='lock-img' />
+                        <Image
+                            src={LockImg}
+                            style={{ width: 'auto', height: 'auto' }}
+                            alt='lock-img'
+                        />
                         <p className='mx-1 text-xs  text-gray-400 '>Your Info is safely secured</p>
                     </div>
                 </div>
